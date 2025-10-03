@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "subscription-tracker",
+  "homepage": "https://github.com/v-jishnu/subscription-tracker#readme",
+  "bugs": {
+    "url": "https://github.com/v-jishnu/subscription-tracker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v-jishnu/subscription-tracker.git"
+  },
+  "license": "ISC",
+  "author": "jishnu",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.18.3",
+    "nodemon": "^3.1.10"
+  }
+}
