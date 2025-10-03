@@ -4,10 +4,13 @@ import subscriptionRouter from './routes/subscription.routes.js';
 import userRouter from './routes/user.routes.js';
 import authRouter from './routes/auth.routes.js';
 import connectDB from './mongoDB/connect.db.js';
+import arcjetMiddleware from './middlewears/arcjet.middlewear.js';
 
 const app = express();
 
 app.use(express.json());
+//app.use(cookieParser());
+app.use(arcjetMiddleware);
 
 //routing middleware
 app.use("/api/v1/subscriptions", subscriptionRouter);
