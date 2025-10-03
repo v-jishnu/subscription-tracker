@@ -5,18 +5,18 @@ import "../config.js";
 
 export const register = async (req,res) => {
     try {
-        const {email , password} = req.body;
+        const {name, email , password} = req.body;
         const isUsed = await User.find({email});
         //if not found 
         if(isUsed.length) {
             return res.status(400).json({
-                message: "Username is already used"
+                message: "Email is already used"
             });
         }
         // if found
         const salt = bcrypt.genSaltSync(10); // hashing password
         const hash = bcrypt.hashSync(password,salt);
-        const newUser = new User({email,password:hash});
+        const newUser = new User({name,email,password:hash});
         await newUser.save();
         res.json({
             message: "User successfully registered"
