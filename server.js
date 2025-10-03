@@ -1,8 +1,8 @@
 import express from 'express';
 import './config.js';
-import subscritorRoutes from './routes/subscriberRoutes.js';
-import userRoutes from './routes/userRoutes.js'; 
-import authRoutes from './routes/auth.routes.js';
+import subscriptionRouter from './routes/subscription.routes.js';
+import userRouter from './routes/user.routes.js';
+import authRouter from './routes/auth.routes.js';
 import connectDB from './mongoDB/connect.db.js';
 
 const app = express();
@@ -10,9 +10,9 @@ const app = express();
 app.use(express.json());
 
 //routing middleware
-app.use("/api/v1/subsciptions", subscritorRoutes);
-app.use("/api/v1/users", userRoutes);
-app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/subscriptions", subscriptionRouter);
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/auth", authRouter);
 
 app.get('/', (req, res) => {
     res.send('welcome to Subscription Tracker API');

@@ -24,8 +24,9 @@ const userSchema = new mongoose.Schema({
             ref: "User"
         },
     ], 
+},{
 
-    Timestamps: true,
+    timestamps: true,
 
 }) ;
 

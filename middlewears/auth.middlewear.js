@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import './config.js';
+import '../config.js';
 import User from '../models/user.js';
 
 const authorize = async(req, res , next) => {
@@ -24,4 +24,4 @@ const authorize = async(req, res , next) => {
     next();
 }
 
-module.exports = authorize;
+export default authorize;
