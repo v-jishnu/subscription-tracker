@@ -1,11 +1,11 @@
 import { Router } from "express";    
+import { createSubscription , getSubscriptions } from "../controllers/subscriptions";
+import authorize from "../middlewears/auth.middlewear.js";
 const subscriptionRouter = Router();
 
 
 // get all subscriptions
-subscriptionRouter.get("/", (req, res) => {
-  res.send("User route is working!");
-});
+subscriptionRouter.get("/", authorize ,getSubscriptions );
 
 // get a subscription by id
 subscriptionRouter.get("/:id", (req, res) => {
@@ -13,9 +13,7 @@ subscriptionRouter.get("/:id", (req, res) => {
 });
 
 // create a subscription
-subscriptionRouter.post("/", (req, res) => {
-  res.send("User route is working!");
-});
+subscriptionRouter.post("/", authorize ,createSubscription);
 
 // update a subscription by id
 subscriptionRouter.put("/:id", (req, res) => {
